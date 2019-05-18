@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<AnchorPane id="AnchorPane" prefHeight="720.0" prefWidth="960.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="caro.SceneController">
+   <children>
+      <HBox layoutX="320.0" layoutY="8.0" prefHeight="160.0" prefWidth="321.0" AnchorPane.bottomAnchor="556.0" AnchorPane.leftAnchor="320.0" AnchorPane.rightAnchor="319.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <ImageView fitHeight="166.0" fitWidth="320.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/5a4f75c7c8ba0aab08d1041588ba1567.jpg" />
+               </image>
+            </ImageView>
+         </children>
+      </HBox>
+      <GridPane layoutX="14.0" layoutY="203.0" prefHeight="148.0" prefWidth="200.0" AnchorPane.bottomAnchor="369.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="760.0" AnchorPane.topAnchor="203.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.0" minWidth="10.0" prefWidth="75.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="136.0" minWidth="10.0" prefWidth="125.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="107.0" minHeight="10.0" prefHeight="52.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="158.0" minHeight="10.0" prefHeight="53.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="187.0" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <ComboBox fx:id="cb_size" onAction="#handleBoardSizeChanged" prefWidth="150.0" GridPane.columnIndex="1" />
+            <ComboBox fx:id="cb_level" onAction="#handleLevelChanged" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="tf_name" promptText="Name" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="87.0" text="Broad size:" />
+            <Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="75.0" text="Level:" GridPane.rowIndex="1" />
+            <Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="84.0" text="Name:" GridPane.rowIndex="2" />
+         </children>
+      </GridPane>
+      <GridPane layoutX="237.0" layoutY="203.0" prefHeight="442.0" prefWidth="487.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="261.0" minWidth="10.0" prefWidth="244.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="264.0" minWidth="10.0" prefWidth="243.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="392.0" minHeight="10.0" prefHeight="381.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="216.0" minHeight="10.0" prefHeight="61.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <HBox fx:id="pane_board" prefHeight="381.0" prefWidth="343.0" GridPane.columnSpan="2" />
+            <Label fx:id="lb_message" alignment="CENTER" prefHeight="17.0" prefWidth="84.0" text="Message" translateX="85.0" GridPane.rowIndex="1" />
+         </children>
+      </GridPane>
+      <Button layoutX="798.0" layoutY="222.0" mnemonicParsing="false" onAction="#handleNewGame" prefHeight="45.0" prefWidth="98.0" text="New game" />
+      <Button layoutX="798.0" layoutY="283.0" mnemonicParsing="false" onAction="#newGameWithComputer" prefHeight="45.0" prefWidth="98.0" text="Play VS COM" />
+      <Button layoutX="798.0" layoutY="351.0" mnemonicParsing="false" onAction="#handleClosing" prefHeight="45.0" prefWidth="98.0" text="Close" />
+   </children>
+</AnchorPane>
